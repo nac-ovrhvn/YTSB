@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YTSB</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <div class="logo">
+        <span class="logo-icon">▶</span>
+        <span class="logo-text">YTSB</span>
+      </div>
+      <p class="tagline">Less noise. More signal.</p>
+    </header>
+
+    <!-- Master toggle -->
+    <div class="toggle-row master">
+      <span class="toggle-label">Extension</span>
+      <button class="toggle-btn" id="masterToggle" aria-label="Toggle extension" aria-pressed="true">
+        <span class="toggle-knob"></span>
+      </button>
+    </div>
+
+    <!-- Per-feature toggles -->
+    <ul class="features" id="featureList">
+      <li class="toggle-row feature-row" data-key="redirectHome">
+        <span class="toggle-label">Home → Subscriptions</span>
+        <button class="toggle-btn" aria-label="Toggle redirect home" aria-pressed="true">
+          <span class="toggle-knob"></span>
+        </button>
+      </li>
+      <li class="toggle-row feature-row" data-key="hideShorts">
+        <span class="toggle-label">Remove Shorts</span>
+        <button class="toggle-btn" aria-label="Toggle hide shorts" aria-pressed="true">
+          <span class="toggle-knob"></span>
+        </button>
+      </li>
+      <li class="toggle-row feature-row" data-key="cleanSidebar">
+        <span class="toggle-label">Clean Sidebar</span>
+        <button class="toggle-btn" aria-label="Toggle clean sidebar" aria-pressed="true">
+          <span class="toggle-knob"></span>
+        </button>
+      </li>
+      <li class="toggle-row feature-row" data-key="hideRecommendations">
+        <span class="toggle-label">Hide Recommendations</span>
+        <button class="toggle-btn" aria-label="Toggle hide recommendations" aria-pressed="true">
+          <span class="toggle-knob"></span>
+        </button>
+      </li>
+    </ul>
+
+    <footer>
+      <a href="https://github.com/nac-ovrhvn/YTSB" target="_blank" rel="noopener">GitHub</a>
+    </footer>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

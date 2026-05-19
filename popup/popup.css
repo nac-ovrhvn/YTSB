@@ -1,0 +1,116 @@
+/* YTSB — popup.css */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0f0f0f;
+  --surface: #1a1a1a;
+  --border: #2a2a2a;
+  --text: #e8e8e8;
+  --muted: #666;
+  --accent: #ff4444;
+  --on: #22c55e;
+  --radius: 10px;
+  --font: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+}
+
+html, body {
+  width: 300px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.container {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Header */
+header { display: flex; flex-direction: column; gap: 3px; }
+
+.logo { display: flex; align-items: center; gap: 8px; }
+.logo-icon { color: var(--accent); font-size: 16px; }
+.logo-text { font-size: 15px; font-weight: 700; letter-spacing: -0.3px; }
+.tagline { color: var(--muted); font-size: 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+/* Toggle rows */
+.toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+
+.toggle-row.master { border-color: #333; }
+
+.toggle-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+  user-select: none;
+}
+
+/* Toggle switch */
+.toggle-btn {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  background: var(--on);
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.toggle-btn[aria-pressed="false"] { background: var(--border); }
+
+.toggle-knob {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.18s ease;
+  display: block;
+  pointer-events: none;
+}
+
+.toggle-btn[aria-pressed="true"] .toggle-knob { transform: translateX(20px); }
+
+/* Feature list */
+.features { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+
+/* Dim features when master is off */
+.container.master-off .features {
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* Footer */
+footer { text-align: center; border-top: 1px solid var(--border); padding-top: 12px; }
+
+footer a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  transition: color 0.15s;
+}
+
+footer a:hover { color: var(--text); }

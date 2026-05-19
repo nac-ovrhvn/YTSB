@@ -1,0 +1,64 @@
+/*
+ * YTSB — content.css
+ * Only truly static rules live here (things that should ALWAYS be hidden).
+ * Toggle-dependent features (recommendations) are handled entirely in JS.
+ */
+
+/* ── Shorts: sidebar entry ───────────────────────────────────────────────── */
+ytd-guide-entry-renderer a[href="/shorts"],
+ytd-mini-guide-entry-renderer a[href="/shorts"] {
+  display: none !important;
+}
+
+/* ── Shorts: reel/shorts shelves ─────────────────────────────────────────── */
+ytd-reel-shelf-renderer {
+  display: none !important;
+}
+
+/* ── Shorts: tab on channel pages ────────────────────────────────────────── */
+tp-yt-paper-tab:has(yt-tab-shape[tab-identifier="Shorts"]),
+yt-tab-shape[tab-identifier="Shorts"] {
+  display: none !important;
+}
+
+/* ── Shorts: overlay badge thumbnails ────────────────────────────────────── */
+ytd-video-renderer:has([overlay-style="SHORTS"]),
+ytd-rich-item-renderer:has([overlay-style="SHORTS"]),
+ytd-compact-video-renderer:has([overlay-style="SHORTS"]) {
+  display: none !important;
+}
+
+/* ── Shorts: search filter chip ──────────────────────────────────────────── */
+ytd-search-filter-renderer:has(a[href*="sp=EgQQARgC"]) {
+  display: none !important;
+}
+
+/* ── Home: topic filter chips bar ────────────────────────────────────────── */
+ytd-feed-filter-chip-bar-renderer {
+  display: none !important;
+}
+
+/* ── Header: notification bell ───────────────────────────────────────────── */
+ytd-notification-topbar-button-renderer {
+  display: none !important;
+}
+
+/* ── Sidebar: explore / music / shopping entries ─────────────────────────── */
+ytd-guide-entry-renderer a[href="/explore"],
+ytd-guide-entry-renderer a[href="/feed/explore"],
+ytd-guide-entry-renderer a[href="/feed/trending"],
+ytd-guide-entry-renderer a[href="/gaming"],
+ytd-guide-entry-renderer a[href="/feed/storefront"],
+ytd-guide-entry-renderer a[href="/news"],
+ytd-guide-entry-renderer a[href="/sports"],
+ytd-guide-entry-renderer a[href="/learning"],
+ytd-guide-entry-renderer a[href="/fashion"],
+ytd-guide-entry-renderer a[href="/podcasts"],
+ytd-guide-entry-renderer a[href*="UCbmNph6atAoGfqLoCL_duAg"] {
+  display: none !important;
+}
+
+/*
+ * NOTE: recommendations on the watch page are intentionally NOT hidden here
+ * because the user can toggle them on/off. That is handled entirely by JS.
+ */
